@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from .novel import *
 
 # Create your views here.
 def home(request):
@@ -15,3 +16,8 @@ def community(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def excel(request):
+    if request.method == 'GET':
+        title_list = get_title_list()
+        return render(request, 'excel.html', {'title_list' : title_list})
