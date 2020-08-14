@@ -1,0 +1,373 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    overflow: scroll;
+}
+body {
+    background-color: #1E1E1E;
+}
+.header {
+    background: #3c3c3c;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    max-height: 30px;
+    z-index: 110;
+}
+
+li#app {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+}
+
+i.fa-html5{
+    font-size: 100px;
+    color: yellow;
+}
+li#migrations {
+    display: flex;
+    align-items: center;
+    padding: 1px;
+}
+.logo {
+    display: inline-block;
+}
+
+ul.header-menu {
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 0;
+}
+
+ul.header-menu li.header-menu-link {
+    display: inline-block;
+    color: #cccccc;
+    font-weight: 300;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.logo img {
+    width: 17px;
+}
+
+.header-app-icons {position: absolute;right: 0;}
+
+.header:after {content: '';clear: both;}
+
+.header-app-icons li {
+    display: inline-flex;
+    margin: 0 9px;
+    color: #ccc;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-header {
+    background: #333;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 47px;
+    height: calc(100vh - 50px);
+}
+
+.bottom-header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #007acc;
+    padding: 0px 10px;
+}
+
+
+.side-header li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #fff;
+    transition: all .3s linear;
+    opacity: 0;
+}
+
+.side-header li i {
+    line-height: 47px !important;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.side-header li {
+    text-align: center;
+    height: 44px;
+    position: relative;
+    padding:1;
+}
+.side-header li:hover:after {
+    width: 2px;
+    opacity: 1;
+}
+
+.side-header li.active:after {
+    width: 2px;
+    opacity: 1;
+}
+
+.side-header .active i {
+    color: #fff;
+}
+ul.side-header-botton-menu {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.menu-option {
+    background: #252526;
+    position: absolute;
+    top: 30px;
+    left: 47px;
+    width: 200px;
+    height: calc(100vh - 50px);
+    overflow: scroll;
+}
+
+.menu-option h5 {
+    margin: 10px 20px;
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.menu-drop {}
+
+span#file-name {
+    font-size: 13.5px;
+    margin: 0 5px;
+}
+
+span#project-name {
+    font-size: 12px;
+    font-weight: 1000;
+    margin:0
+}
+
+.box-click i, .box-click span {
+    color: #ccc;
+    font-size: 12px;
+    margin: 0 5px;
+    z-index: 99;
+    position: relative;
+}
+
+.show-pre {
+    margin-left: 10px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+hr {
+    border-color: #585858;
+    margin: 0;
+}
+
+
+.menu-option li {
+    font-size: 12px;
+    color: #ccc;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-option li:before {
+    content: '';
+    background: #37373d;
+    right: 70px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+.menu-option li:hover:before {
+    opacity: 1;
+}
+.menu-option li.active:before {
+    opacity: 1;
+}
+
+.menu-option li.active {
+    background: #37373d;
+}
+.menu-option li:hover {
+    background: #37373d;
+    color: #ccc;
+}
+i.fab.fa-html5 {
+    color: orange;
+    font-size: 15px;
+}
+i#appicon {
+    font-size: 15px;
+    color: rgb(6, 153, 14);
+
+}
+
+div#migrations .show-pre:hover {
+    background: #37373d;
+    color: #ccc;
+}
+
+i.fas.fa-folder-open {
+    font-size: 15px;
+    color: rgb(226, 175, 6);
+
+}
+
+i.fab.fa-python {
+    font-size: 15px;
+
+}
+i.fab.fa-css3-alt {
+    color: skyblue;
+    font-size: 15px;
+}
+
+i.fas.fa-file {
+    font-size: 15px;
+    color: rgb(39, 125, 238);
+}
+i.fab.fa-js {
+    color: green;
+}
+ul.bottom-links {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+ul.bottom-links li:first-of-type {
+    border-bottom: 1px solid #585858;
+}
+
+ul.bottom-links li {
+    width: 100%;
+    text-indent: 3px;
+}
+
+ul.bottom-links li:hover {
+    background: transparent;
+}
+
+ul.bottom-links li:hover:before {
+    content: unset;
+}
+ul.right {
+    float: left;
+}
+
+ul.right li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+ul.right li i {
+    color: #fff;
+    font-size: 12px;
+}
+
+ul.left {
+    float: right;
+}
+
+ul.left li {
+    display: inline-block;
+    font-size: 12px;
+    color: #ddd;
+    margin: 0 9px;
+}
+
+
+/* textarea!!!!!!!!!!!!!!!!!!!!! */
+.hello {
+    width: calc(100% - 247px);
+    margin-left: 247px;
+    margin-right: 0;
+    /* overflow: scroll; */
+}
+
+div.upper-file-menu {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin-top: 30px;
+    position: fixed;
+    z-index: 100;
+    background-color: #1E1E1E;
+}
+
+#upper-file {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid black;
+    color: #ccc;
+    font-size: 12px;
+}
+
+
+div .number-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 30px;
+    height: 100%;
+    color: #ccc;
+    overflow: hidden;
+    font-size: 13px;
+    margin-top: 90px;
+    z-index: -1;
+    opacity: 0.4;
+    
+}
+
+.upper-file-log {
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    margin-top: 60px;
+    position: fixed;
+    z-index: 100;
+    background-color: #1E1E1E;
+    width: 100%;
+    font-size:13.5px;
+    color: #ccc;
+}
+
+
+#log-items {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+div.active {
+    background: #fff;
+    transition: all .3s linear;
+    opacity: 0.2;
+    
+}
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>base</title>
+    <link rel="stylesheet" href="../static/base.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/4d17cd9c8d.js" crossorigin="anonymous"></script>
+    {% block css %}
+
+    {% endblock %}
+</head>
+<body>
+    <div class="overlay-navigation">
+        <nav role="navigation">
+          <ul>
+            <li><a href="{% url 'home' %}" data-content="The beginning">Home</a></li>
+            <li><a href="{% url 'about' %}" data-content="Curious?">About</a></li>
+            <li><a href="{% url 'works' %}" data-content="I got game">Works</a></li>
+            <li><a href="{% url 'community' %}" data-content="Only the finest">Community</a></li>
+            <li><a href="{% url 'contact' %}" data-content="Don't hesitate">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="open-overlay">
+        <span class="bar-top"></span>
+        <span class="bar-middle"></span>
+        <span class="bar-bottom"></span>
+      </div>
+    {% block container %}
+    
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
+    <script>
+      $('.open-overlay').click(function() {
+          $('.open-overlay').css('pointer-events', 'none');
+          var overlay_navigation = $('.overlay-navigation'),
+            top_bar = $('.bar-top'),
+            middle_bar = $('.bar-middle'),
+            bottom_bar = $('.bar-bottom');
+      
+          overlay_navigation.toggleClass('overlay-active');
+          if (overlay_navigation.hasClass('overlay-active')) {
+      
+            top_bar.removeClass('animate-out-top-bar').addClass('animate-top-bar');
+            middle_bar.removeClass('animate-out-middle-bar').addClass('animate-middle-bar');
+            bottom_bar.removeClass('animate-out-bottom-bar').addClass('animate-bottom-bar');
+            overlay_navigation.removeClass('overlay-slide-up').addClass('overlay-slide-down')
+            overlay_navigation.velocity('transition.slideLeftIn', {
+              duration: 300,
+              delay: 0,
+              begin: function() {
+                $('nav ul li').velocity('transition.perspectiveLeftIn', {
+                  stagger: 150,
+                  delay: 0,
+                  complete: function() {
+                    $('nav ul li a').velocity({
+                      opacity: [1, 0],
+                    }, {
+                      delay: 10,
+                      duration: 140
+                    });
+                    $('.open-overlay').css('pointer-events', 'auto');
+                  }
+                })
+              }
+            })
+      
+          } else {
+            $('.open-overlay').css('pointer-events', 'none');
+            top_bar.removeClass('animate-top-bar').addClass('animate-out-top-bar');
+            middle_bar.removeClass('animate-middle-bar').addClass('animate-out-middle-bar');
+            bottom_bar.removeClass('animate-bottom-bar').addClass('animate-out-bottom-bar');
+            overlay_navigation.removeClass('overlay-slide-down').addClass('overlay-slide-up')
+            $('nav ul li').velocity('transition.perspectiveRightOut', {
+              stagger: 150,
+              delay: 0,
+              complete: function() {
+                overlay_navigation.velocity('transition.fadeOut', {
+                  delay: 0,
+                  duration: 300,
+                  complete: function() {
+                    $('nav ul li a').velocity({
+                      opacity: [0, 1],
+                    }, {
+                      delay: 0,
+                      duration: 50
+                    });
+                    $('.open-overlay').css('pointer-events', 'auto');
+                  }
+                });
+              }
+            })
+          }
+        })
+    </script>
+</body>
+</html>
+

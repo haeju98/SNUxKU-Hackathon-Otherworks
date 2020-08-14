@@ -1,0 +1,123 @@
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static '_home-1.css' %}" type='text/css'>
+{% endblock %}
+	<div class="container">
+    <div class="workingMonitor">
+      <div class="screen">
+        <div id="monitorOn" class="screenMonitor active">
+          <div class="inScreenLogo"></div>
+          <div class="inScreenTopBar"></div>
+          <div class="inScreenContent"></div>
+          <div class="inScreenContent"></div>
+          <div class="inScreenContent"></div>
+          <div class="inScreenFooter"></div>
+          <div class="inScreenStartBar">
+            <i class="fa fa-windows" aria-hidden="true"></i>
+            <input type="search" name="googlesearch" placeholder="Type here to search">
+            <i class="fa fa-comment-o" aria-hidden="true"></i>
+            <div id="timeMonitor"></div>
+          </div>
+        </div>
+        <div id="monitorOff" class="screenMonitorOff inactive">
+
+        </div>
+        <div id="monitorMenuScreen" class="screenMonitorMenu inactive">
+         
+        </div>
+      </div>
+      <div class="screenControl">	
+        <div class="monitorLogo">
+          <i class="fa fa-gg" aria-hidden="true"></i>
+        </div>
+        <div class="monitorButtons">
+          <div class="control onOffButton">
+            <button id="onOff" class="btn"><i class="fa fa-power-off" aria-hidden="true"></i></button> </br>
+            <i id="lightOnOff" class="fa fa-circle" aria-hidden="true"></i>
+          </div>
+          <div class="control monitorMenuButton">
+            <button id="monitorMenu" class="btn"><i class="fa fa-bars" aria-hidden="true"></i></button> </br>         
+            <i id="lightMonitorMenu" class="fa fa-circle" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <div class="screenLeg">
+
+      </div>
+      <div class="screenFoot">
+
+      </div>
+    </div>
+	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
+    <script>
+        var On_Off = document.getElementById('onOff');
+        var screenOn = document.getElementById('monitorOn');
+        var screenOff = document.getElementById('monitorOff');
+        var screenMenuOn = document.getElementById('monitorMenu');
+        var monitorMenuScreen = document.getElementById('monitorMenuScreen');
+        var lightonoff = document.getElementById('lightOnOff');
+        var lightmonitormenu = document.getElementById('lightMonitorMenu');
+        
+        
+        
+        On_Off.addEventListener('click' , function(){
+          if (screenOn.classList.contains('active')) {
+            screenOn.classList.add('inactive');
+            screenOn.classList.remove('active');
+            screenOff.classList.remove('inactive');
+            screenOff.classList.add('active');
+            lightonoff.style.color = "red";
+            lightmonitormenu.style.color = "black";
+          } else if (screenOn.classList.contains('inactive')) {
+            screenOn.classList.add('active');
+            screenOn.classList.remove('inactive');
+            screenOff.classList.add('inactive');
+            screenOff.classList.remove('active');
+            lightonoff.style.color = "green";
+            lightmonitormenu.style.color = "green";
+          }
+        });
+        
+        
+        
+        screenMenuOn.addEventListener('click' , function(){
+          if (monitorMenuScreen.classList.contains('inactive')) {
+            monitorMenuScreen.classList.remove('inactive');
+            monitorMenuScreen.classList.add('active');
+            lightmonitormenu.style.color = "#5a6dff"; 
+          } else if (monitorMenuScreen.classList.contains('active')) {
+            monitorMenuScreen.classList.remove('active');
+            monitorMenuScreen.classList.add('inactive');
+            lightmonitormenu.style.color = "green";  	
+          } 
+        });
+        
+        screenMenuOn.addEventListener('click' , function(){
+            if (screenOn.classList.contains('inactive') && screenOff.classList.contains('active')) {
+                monitorMenuScreen.classList.add('inactive');
+                monitorMenuScreen.classList.remove('active');
+                lightmonitormenu.style.color = "black";
+            }
+        });
+        
+        (function () {
+            function checkTime(i) {
+                return (i < 10) ? "0" + i : i;
+            }
+        
+            function startTime() {
+                var today = new Date(),
+                    h = checkTime(today.getHours()),
+                    m = checkTime(today.getMinutes()),
+                    s = checkTime(today.getSeconds());
+                document.getElementById('timeMonitor').innerHTML = h + ":" + m + ":" + s;
+                t = setTimeout(function () {
+                    startTime()
+                }, 500);
+            }
+            startTime();
+        })();
+    </script>

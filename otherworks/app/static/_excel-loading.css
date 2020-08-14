@@ -1,0 +1,132 @@
+#box {
+  width: 440px;
+  height: 248px;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: #217346;
+}
+#logo {
+  margin: 13px 0 0 13px;
+  float: left;
+}
+#logo img {
+  width: 18px;
+  margin: auto;
+  float: left;
+  -webkit-filter: grayscale(100%) brightness(5);
+  filter: grayscale(100%) brightness(5);
+}
+#logo h6 {
+  color: white;
+  font-size: 16px;
+  font-weight: 200;
+  font-family: Segoe UI;
+  letter-spacing: 0px;
+  margin: 0px auto auto 5px;
+  float: left;
+}
+#box h1 {
+  color: white !important;
+  font-size: 65px;
+  letter-spacing: -2px;
+  margin: 67px 0 0 138px;
+}
+#box .text {
+  color: #9fd5b7;
+  font-weight: 400;
+  font-family: Segoe UI;
+}
+#box h4 {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 50%;
+}
+#starting-txt {
+  margin: 46px 12px 0;
+  float: left;
+}
+#madeby-txt {
+  margin: 46px 17px 0;
+  float: right;
+  color: #9fd5b7;
+  font-weight: 400;
+  font-family: Segoe UI;
+}
+
+.button {
+  width: 10px;
+  height: 10px;
+  right: 23px;
+  top: 12px;
+  opacity: 1;
+  position: absolute;
+}
+.button:hover {
+  opacity: 0.3;
+}
+#close-btn:before,
+#close-btn:after {
+  width: 2px;
+  height: 12px;
+  left: 15px;
+  content: ' ';
+  background-color: white;
+  position: absolute;
+}
+#close-btn:before {
+  transform: rotate(45deg);
+}
+#close-btn:after {
+  transform: rotate(-45deg);
+}
+#minimize-btn {
+  width: 10px;
+  height: 2px;
+  right: 42px;
+  top: 20px;
+  content: ' ';
+  background-color: white;
+  position: absolute;
+  float: right;
+}
+.loading {
+  height: 20px;
+  /* border: 1px solid #ddd; */
+}
+.dot {
+  width: 4px;
+  height: 4px;
+  top: 160px;
+  left: -10%;
+  margin: auto;
+  border-radius: 5px;
+  background: white;
+  position: absolute;
+}
+#dot1 {
+  animation: dotslide 2.8s infinite cubic-bezier(0.2, .8, .8, 0.2);
+}
+#dot2 {
+  animation: dotslide 2.8s .2s infinite cubic-bezier(0.2, .8, .8, 0.2);
+}
+#dot3 {
+  animation: dotslide 2.8s .4s infinite cubic-bezier(0.2, .8, .8, 0.2);
+}
+#dot4 {
+  animation: dotslide 2.8s .6s infinite cubic-bezier(0.2, .8, .8, 0.2);
+}
+#dot5 {
+  animation: dotslide 2.8s .8s infinite cubic-bezier(0.2, .8, .8, 0.2);
+}
+@keyframes dotslide {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: 110%;
+  }
+}

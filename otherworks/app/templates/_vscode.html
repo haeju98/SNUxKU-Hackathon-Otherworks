@@ -1,0 +1,187 @@
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static '_vscode.css' %}" type='text/css'>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+{% endblock %}
+{% block container %}
+        <div class="header">
+            <div class="logo">
+                <img src="logo.svg" alt="">
+            </div>
+            <ul class="header-menu">
+                <li class="header-menu-link">File</li>
+                <li class="header-menu-link">Edit</li>
+                <li class="header-menu-link">Selection</li>
+                <li class="header-menu-link">View</li>
+                <li class="header-menu-link">Go</li>
+                <li class="header-menu-link">Run</li>
+                <li class="header-menu-link">Terminal</li>
+                <li class="header-menu-link">Help</li>
+            </ul>
+            <div class="header-app-icons">
+                <ul>
+                    <li>
+                        <i class="fa fa-window-minimize"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-window-restore"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-times"></i>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    
+        <div class="side-header">
+            <ul class="side-header-menu">
+                <li class="active">
+                    <i class="fa fa-copy"></i>
+                </li>
+                <li>
+                    <i class="fa fa-search"></i>
+                </li>
+                <li>
+                    <i class="fa fa-share-alt"></i>
+                </li>
+                <li>
+                    <i class="fa fa-play"></i>
+                </li>
+                <li>
+                    <i class="fa fa-th-large"></i>
+                </li>
+            </ul>
+            <ul class="side-header-botton-menu">
+                <li>
+                    <i class="fa fa-user-circle"></i>
+                </li>
+                <li>
+                    <i class="fa fa-cog"></i>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="bottom-header">
+            <ul class="right">
+                <li>
+                    <i class="fa fa-times-circle"></i>
+                </li>
+                <li>
+                    <i class="fa fa-exclamation-triangle"></i>
+                </li>
+            </ul>
+            <ul class="left">
+                <li>
+                    Ln 24, Col 32
+                </li>
+                <li>
+                    Spaces: 3
+                </li>
+                <li>
+                    UTF-8
+                </li>
+                <li>
+                    CRLF
+                </li>
+                <li>
+                    HTML
+                </li>
+                <li>
+                    <i class="fa fa-radiation-alt"></i> Port: 5050
+                </li>
+                <li>
+                    <i class="fa fa-bell"></i>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="menu-option">
+            <h5>EXPLORER</h5>
+            <div class="menu-drop">
+                <div class="box-click">
+                    &nbsp;<i class="fa fa-chevron-down"></i> <span id="project-name">OPEN EDITORS</span>
+                    <div class="show-pre">
+                        <ul>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">_chatbot.html</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_chatbot.css</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></li>
+                        </ul>
+                        <span id="project-name">&nbsp;&nbsp;&nbsp;&nbsp;GROUP 2</span>
+                        <ul>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">_chatbot.html</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_chatbot.css</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="menu-drop">
+                <div class="box-click">
+                    <i class="fa fa-chevron-down"></i> <span id="project-name">OTHERWORKS</span>
+                    
+                    <div class="show-pre">
+                        <ul>
+                            <li id="app"><i class="fa fa-chevron-down"></i><i id="appicon" class="fas fa-folder-open"></i> <span id="file-name">app</span></li>
+                            <li id="migrations">&nbsp;&nbsp;<i class="fa fa-chevron-down"></i><i class="fas fa-folder-open"></i> <span id="file-name">migrations</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">__init__.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;<i class="fa fa-chevron-down"></i><i class="fas fa-folder-open"></i> <span id="file-name">static</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_chatbot.css</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_vscode.css</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">base.css</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">home.css</span></li>
+                            <li id="migrations">&nbsp;&nbsp;<i class="fa fa-chevron-down"></i><i class="fas fa-folder-open"></i> <span id="file-name">templates</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">_chatbot.html</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">_excel.html</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">_vscode.html</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">base.html</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">home.html</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">__init__.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">admin.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">apps.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">models.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">tests.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">views.py</span></li>
+                            <li id="migrations"><i class="fa fa-chevron-down"></i><i class="fas fa-folder-open"></i> <span id="file-name">otherworks</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">__init__.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">asgi.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">apps.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">settings.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">urls.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">wsgi.py</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-file"></i> <span id="file-name">db.sqlite3</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i> <span id="file-name">manage.py</span></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--TEXTAREA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+        <!-- <div class="textarea">
+            
+        </div> -->
+        <div class="hello">
+            <div class="upper-file-menu">
+                <div id="upper-file"><i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></div>
+                <div id="upper-file"><i class="fab fa-html5"></i> <span id="file-name">_excel.html</span></div>
+                <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">tests.py</span></div>
+                <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">views.py</span></div>
+                <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">tests.py</span></div>
+                <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">views.py</span></div>
+                <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">tests.py</span></div>
+            </div>
+            <div class="upper-file-log">
+                <div id="log-items">app</div> <div id="log-items">></div> <div id="log-items">app</div> <div id="log-items">></div><div id="log-items"><i class="fab fa-html5"></i> <span id="file-name">_excel.html</span></div>
+            </div>
+            <div class="number-area">
+                {% for i in "x"|rjust:"100" %}
+                <div>{{ forloop.counter }}</div>
+                {% endfor %}
+            </div>
+        
+        </div>
+
+{% endblock %}

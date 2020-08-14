@@ -1,0 +1,28 @@
+html, body {
+    background: #efefef;      
+    height:100%;  
+  }
+  #center-text {          
+    display: flex;
+    flex: 1;
+    flex-direction:column; 
+    justify-content: center;
+    align-items: center;  
+    margin-top: 40px;
+
+  }
+
+  div#home-1-container {
+      margin-top: 100px;
+  }
+
+  h1#home-title {
+    font-size: 100px;
+    font-family: AppleMyungjo;
+  }
+
+  h3#home-subtitle {
+    font-family: AppleMyungjo;
+  }
+
+
