@@ -1,0 +1,19 @@
+<div class="card" style="width: 18rem; height:35rem;">
+
+    {% if post.image %}
+    <img class="card-img-top" src="../../media/{{post.image}}" alt="{{ image.file.image }}">
+    {% endif %}
+    <div class="card-body">
+      <div class="card-text">
+          <h1>{{post.title}}</h1>
+          <h3>{{post.content }}</h3>
+      </div>
+    </>
+</div>
+<div class="card" style="width: 18rem;">
+    {% if user.is_authenticated and post.author.pk == user.pk %}
+    <a href="{% url 'update' post.pk %}" class="btn btn-info">Update</a>
+    <a href="{% url 'delete' post.pk %}" class="btn btn-primary">Delete</a>
+    {% endif %}
+  </div>
+</div>
