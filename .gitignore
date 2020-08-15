@@ -9,3 +9,5 @@ media
 .vscode/
 cv/
 EB_zip_files/
+Pipfile
+Pipfile.lock
