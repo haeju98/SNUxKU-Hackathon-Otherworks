@@ -310,10 +310,10 @@ i:hover {
 }
 
 .omok-cell {
-    min-height:27px;
-    max-height:27px;
-    min-width :27px;
-    max-width :27px;
+    min-height:15px;
+    max-height:15px;
+    min-width :15px;
+    max-width :15px;
     border:1px solid black;
     margin:-1px;
     padding: 2px;

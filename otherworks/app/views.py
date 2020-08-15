@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .novel import *
 from .models import*
+from django.http import JsonResponse
 import math
 
 # Create your views here.
@@ -20,12 +21,20 @@ def contact(request):
     return render(request, 'contact.html')
 
 def excel(request):
-    webnovels = webnovel.objects.all()
-    title_list = []
-    for i in webnovels:
-        title_list.append(i.title)
+    if request.method =="GET":
+        webnovels = webnovel.objects.all()
+        title_list = []
+        for i in webnovels:
+            title_list.append(i.title)
 
-    return render(request, 'excel.html', {'title_list' : title_list})
+        return render(request, 'excel.html', {'title_list' : title_list})
+    elif request.method == "POST":
+        title = request.POST['title']
+        context = {
+            'title' : title
+        }
+
+        return JsonResponse(context)
 
 def excel_omok(request):
     return render(request, 'excel_omok.html')

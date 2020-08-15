@@ -357,7 +357,48 @@ $(document).ready(() => {
     });
 
 
-
+    $('.select-novel').submit((e) => {
+        e.preventDefault();
+        console.log('form submitted');
+        const $this = $(e.currentTarget);
+        const title = $this.data('title');
+        const csrfmiddlewaretoken = $this.data('csrfmiddlewaretoken');
+    
+        $.ajax({
+            type: 'POST',
+            url: `/excel/`, 
+            data: { 
+                title: title,
+                csrfmiddlewaretoken: csrfmiddlewaretoken,
+            },
+            dataType: 'json',
+            success: function(response) { 
+                console.log(response);
+                const str = `
+                    <div class = "input" id="title-selector">
+                        <div class="value">
+                            ${response.title}
+                        </div>
+                        <div>
+                            <a href="/excel/${response.title}/><span>보러 가기</span></a>
+                            <i class="material-icons">arrow_drop_down</i>
+                        </div>
+                    </div>
+                `;
+                
+                const $titleSelector = document.querySelector("#title-selector");
+                $(str).insertBefore($titleSelector);
+                $titleSelector.remove();
+            
+            },
+            error: function(response, status, error) {
+                console.log(response, status, error);
+            },
+            complete: function(response) {
+                console.log(response);
+            },
+        });
+    });
 
 
     }
