@@ -25,4 +25,6 @@ urlpatterns = [
     path('community/', views.community, name="community"),
     path('contact/', views.contact, name="contact"),
     path('excel/', views.excel, name="excel"),
+    path('excel/omok/', views.excel_omok, name="excel_omok"),
+    path('excel/<str:title>/', views.excel_title, name="excel_title"),
 ]

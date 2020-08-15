@@ -21,7 +21,6 @@ body {
 
 .content {
     margin-top:165px;
-    z-index:-1;
 }
 
 
@@ -142,6 +141,11 @@ i:hover {
     padding-left:10px;
 }
 
+.input .reset-wrapper {
+    display:flex;
+    align-items:center;
+}
+
 .table-wrapper {
     position:relative;
     width:auto;
@@ -191,7 +195,6 @@ i:hover {
     height:100%;
     display:flex;
     flex-direction:row;
-    z-index:-2;
 }
 
 .cells .row {
@@ -232,6 +235,7 @@ i:hover {
 
 .table .cell {
     min-width: 100px;
+    max-width: 100px;
     min-height:27px;
     /* max-height:27px; */
     border-bottom:1px solid #adadad;
@@ -284,4 +288,33 @@ i:hover {
     height:25px;
     text-align:center;
 
+}
+
+.omok-board {
+    position:absolute;
+    top:0;
+    right:23px;
+    width:auto;
+    height:auto;
+    background-color:white;
+    display:flex;
+    flex-direction:column;
+    border: 1px solid black;
+    margin:-1px;
+}
+
+.omok-row {
+    display:flex;
+    flex-direction:row;
+
+}
+
+.omok-cell {
+    min-height:27px;
+    max-height:27px;
+    min-width :27px;
+    max-width :27px;
+    border:1px solid black;
+    margin:-1px;
+    padding: 2px;
 }

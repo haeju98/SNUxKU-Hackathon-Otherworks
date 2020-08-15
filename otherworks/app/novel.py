@@ -7,12 +7,11 @@ def get_title_list():
 
 
 def get_content(title):
-    csv_data = pd.read_csv("./webnovelList.csv", engine="python")
-    str=[]
+    csv_data = pd.read_csv("./app/static/webnovelList.csv", engine="python")
+    str=""
     for i in range(len(csv_data['title'])):
         if csv_data['title'][i] == title:
-            str.append(csv_data.loc[i, 'content'])
-    print(str)
+            str += csv_data.loc[i, 'content']
     return str
 
 
