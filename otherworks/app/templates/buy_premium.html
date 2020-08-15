@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'buyPremium.css' %}" type='text/css'>
+{% endblock %}
+{% block container %}
+
+<div class="ct" id="t1">
+    <div class="page" id="p1">
+        <section class="icon fa fa-star" >
+            <span class="title" >프리미엄 기능을 사용해보세요!</span>
+            <span class="hint" >$ 6.6 월
+            <br>서비스 이용약관</span>
+            <span class="small-title">무료 시험사용 시작</span>
+        </section> 
+    </div>
+    <div class="page" id="p2">
+        <section class="icon fa fa-bolt">
+            <span class="title">마케팅/기획</span>
+            <span class="hint">창의력의 원천은...</span>
+        </section>
+    </div>  
+    <div class="page" id="p3">
+        <section class="icon fa fa-rocket">
+            <span class="title">디자인/영상편집</span>
+            <span class="hint">영감은<br>여기로부터.</span>
+        </section>
+    </div>
+    <div class="page" id="p4">
+        <section class="icon fa fa-dribbble">
+            <span class="title">기타</span>
+            <span class="hint">어디에나<br>쓰이는.</span>
+        </section></a>
+    </div>      
+</div>
+
+
+{% endblock %}
