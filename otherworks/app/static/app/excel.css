@@ -21,6 +21,7 @@ body {
 
 .content {
     margin-top:165px;
+    width:100%;
 }
 
 
@@ -148,7 +149,7 @@ i:hover {
 
 .table-wrapper {
     position:relative;
-    width:auto;
+    width:100%;
     height:auto;
 }
 
@@ -171,6 +172,7 @@ i:hover {
 .column .image-wrapper {
     height:100%;
     min-width: 40px;
+    max-width: 40px;
     display:flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -181,7 +183,8 @@ i:hover {
 
 .column .column-header {
     height:100%;
-    min-width:100px;
+    min-width: calc((100% - 40px)/12);
+    max-width: calc((100% - 40px)/12);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -202,6 +205,7 @@ i:hover {
     flex-direction:column;
     background-color: rgb(230,230,230);
     min-width:40px;
+    max-width:40px;
     height:auto;
 }
 
@@ -218,7 +222,7 @@ i:hover {
 }
 
 .cells .table {
-    width:auto;
+    width:100%;
     height:auto;
     display:flex;
     flex-direction:column;
@@ -228,22 +232,52 @@ i:hover {
 .table .cell-wrapper {
     display:flex;
     flex-direction:row;
+    width:100%;
     min-height:27px;
     /* max-height:27px; */
     height:27px;
 }
 
 .table .cell {
-    min-width: 100px;
-    max-width: 100px;
+    min-width: calc(100%/12);
+    max-width: calc(100%/12);
     min-height:27px;
     /* max-height:27px; */
+    /* border-bottom:1px solid #adadad;
+    border-right:1px solid #adadad;
+    margin: 0px -1px -1px 0px; */
     border-bottom:1px solid #adadad;
     border-right:1px solid #adadad;
-    margin: 0px -1px -1px 0px;
-    overflow:hidden;
+    margin: 0 -1px -1px 0;
+    overflow-y:hidden;
     display:flex; 
     justify-content: center;
+}
+
+.title-button {
+    width:100%; 
+    height:100%;
+    background-color:white;
+    
+    border-color:white !important;
+    border-width: 0px !important;
+    border-width: 0px !important;
+    border-image-width: 0px !important;
+    
+    
+    
+    /* border-bottom:1px solid #adadad;
+    border-right:1px solid #adadad; */
+    
+}
+
+.select-novel {
+    width:100%;
+    height:100%;
+    border:0;
+    border-color: white;
+    padding:1px;
+    
 }
 
 .footer {
@@ -317,4 +351,14 @@ i:hover {
     border:1px solid black;
     margin:-1px;
     padding: 2px;
+}
+
+.omok-cell-inner {
+    min-height:15px;
+    max-height:15px;
+    min-width :15px;
+    max-width :15px;
+    border-radius: 50%;
+    margin:-1px;
+
 }

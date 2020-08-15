@@ -43,4 +43,6 @@ urlpatterns = [
     
     path('excel/omok/', views.excel_omok, name="excel_omok"),
     path('excel/<str:title>/', views.excel_title, name="excel_title"),
+
+    path('buyPremium/', views.buyPremium, name="buyPremium"),
 ]

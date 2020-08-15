@@ -103,7 +103,7 @@
                         {% comment %} 제목 보여주기 {% endcomment %}
                         <div class="table">
                             {% with ''|center:26 as range1 %}
-                            {% with ''|center:13 as range2 %}
+                            {% with ''|center:12 as range2 %}
                                 {% for _ in range1 %}
                                     <div class="cell-wrapper" id = "{{ forloop.counter }}">
                                         {% for _ in range2 %}
@@ -119,7 +119,7 @@
                                                               data-csrfmiddlewaretoken="{{ csrf_token }}"
                                                               style="width:100%;"
                                                               >
-                                                            <button  type="submit" style="width:100%; height:100%;">
+                                                            <button class="title-button" type="submit" >
                                                                 {{ title_list|index:index }}
                                                             </button>
                                                         </form> 

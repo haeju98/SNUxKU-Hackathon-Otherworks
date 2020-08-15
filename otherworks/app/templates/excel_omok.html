@@ -44,7 +44,7 @@
                         <span>수식</span>
                         <span>데이터</span>
                         <span>검토</span>
-                        <span>보기</span>
+                        <a href = "{% url 'excel' %}"><span>소설 보기</span></a>
                         <i class="fas fa-lightbulb"></i>
                         <span style="margin-left:-7px;">수행할 작업을 알려주세요.</span>
                     </div>
@@ -102,8 +102,9 @@
                                 {% for row in range %}
                                     <div class="omok-row">
                                         {% for column in range %}
-                                            <div class= "omok-cell" id="{{forloop.parentloop.counter0}}{{forloop.counter0}}" >
-
+                                            <div class= "omok-cell" id="{{forloop.parentloop.counter0}},{{forloop.counter0}}" >
+                                                <div class="omok-cell-inner" >
+                                                </div>
                                             </div>
                                         {% endfor %}
                                     </div>
@@ -127,19 +128,28 @@
                                 {% for _ in range %}
                                     {% if forloop.first	 %}
                                         <div class="cell-wrapper" id = "{{ forloop.counter }}">
-                                            {% for i in 'ABCDEFGHIJKL'%}
-                                                <div class = "cell content">
-                                                    모델 {{i}}
+                                            {% for i in header %}
+                                                <div class = "cell content" style="font-weight:bold;">
+                                                    {{ header|index:forloop.counter0 }}
                                                 </div>
                                             {% endfor %}
                                         </div>
                                     {% else %}
                                         <div class="cell-wrapper" id = "{{ forloop.counter }}">
-                                            {% for i in 'ABCDEFGHIJKL'%}
-                                                <div class = "cell content">
-                                                    {% random_int 1 100 %}
-                                                </div>
-                                            {% endfor %}
+                                            {% if forloop.counter0 < length %}
+                                                {% for i in content|index:forloop.counter0%}
+                                                    <div class = "cell content">
+                                                        {{i}}
+                                                    </div>
+                                                {% endfor %}
+                                            {% else %}
+                                                {% with ''|center:12 as range %}
+                                                    {% for i in range %}
+                                                        <div class = "cell content">
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endwith %}
+                                            {% endif %}
                                         </div>
                                     {% endif %}
                                 {% endfor %}
@@ -164,23 +174,33 @@
 
                             {% comment %} 제목 보여주기 {% endcomment %}
                             <div class="table">
-                                <img src = "{% static 'image/graph.jpg' %}" style="position:absolute; top:0; right:0; width:auto; height:400px;">
+                                <img src = "{% static 'image/graph.jpg' %}" style="position:absolute; top:550px; left:60px; width:auto; height:500px;">
+                                <img src = "{% static 'image/graph2.png' %}" style="position:absolute; top:30px; right:23px; width:300px; height:500px;">
                                 {% for _ in range %}
                                     {% if forloop.first	 %}
                                         <div class="cell-wrapper" id = "{{ forloop.counter }}">
-                                            {% for i in 'ABCDEFGHIJKL'%}
-                                                <div class = "cell content">
-                                                    모델 {{i}}
+                                            {% for i in header %}
+                                                <div class = "cell content" style="font-weight:bold;">
+                                                    {{ header|index:forloop.counter0 }}
                                                 </div>
                                             {% endfor %}
                                         </div>
                                     {% else %}
                                         <div class="cell-wrapper" id = "{{ forloop.counter }}">
-                                            {% for i in 'ABCDEFGHIJKL'%}
-                                                <div class = "cell content">
-                                                    {% random_int 1 100 %}
-                                                </div>
-                                            {% endfor %}
+                                            {% if forloop.counter0 < length %}
+                                                {% for i in content|index:forloop.counter0%}
+                                                    <div class = "cell content">
+                                                        {{i}}
+                                                    </div>
+                                                {% endfor %}
+                                            {% else %}
+                                                {% with ''|center:12 as range %}
+                                                    {% for i in range %}
+                                                        <div class = "cell content">
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endwith %}
+                                            {% endif %}
                                         </div>
                                     {% endif %}
                                 {% endfor %}
