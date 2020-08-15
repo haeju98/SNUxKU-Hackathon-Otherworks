@@ -1,6 +1,6 @@
 function replaceRightAd(youtubeURL) {
   if (youtubeURL === '') {
-    youtubeURL = 'https://www.youtube.com/watch?v=-nhBtFs_ziY';
+    youtubeURL = 'https://youtu.be/mJS1TL3DHnM';
   }
   var indexofslash = youtubeURL.lastIndexOf('/');
   var indexofequal = youtubeURL.lastIndexOf('=');

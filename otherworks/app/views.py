@@ -37,7 +37,7 @@ def works1(request):
     return render(request, '_works1.html')
 
 def navercalendar(request):
-    return render(request, 'navercalendar.html')
+    return render(request, 'calendar.html')
 
 def naver(request):
     return render(request, 'naver.html')
