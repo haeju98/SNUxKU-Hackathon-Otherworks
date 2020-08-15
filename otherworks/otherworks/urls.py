@@ -37,4 +37,7 @@ urlpatterns = [
     path('<int:post_pk>/delete', views.delete, name="delete"),
     path('vscode/', views._vscode, name="vscode")
     
+    path('excel/', views.excel, name="excel"),
+    path('excel/omok/', views.excel_omok, name="excel_omok"),
+    path('excel/<str:title>/', views.excel_title, name="excel_title"),
 ]
