@@ -3,6 +3,8 @@
 <link rel="stylesheet" href="{% static '_vscode.css' %}" type='text/css'>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreDefault.min.css">
+
 {% endblock %}
 {% block container %}
         <div class="header">
@@ -165,7 +167,7 @@
         </div> -->
         <div class="hello">
             <div class="upper-file-menu">
-                <div id="upper-file"><i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></div>
+                <div id="upper-file" onclick={changeUpperFile()}><i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></div>
                 <div id="upper-file"><i class="fab fa-html5"></i> <span id="file-name">_excel.html</span></div>
                 <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">tests.py</span></div>
                 <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">views.py</span></div>
@@ -177,11 +179,77 @@
                 <div id="log-items">app</div> <div id="log-items">></div> <div id="log-items">app</div> <div id="log-items">></div><div id="log-items"><i class="fab fa-html5"></i> <span id="file-name">_excel.html</span></div>
             </div>
             <div class="number-area">
-                {% for i in "x"|rjust:"100" %}
+                {% for i in "x"|rjust:"3000" %}
                 <div>{{ forloop.counter }}</div>
                 {% endfor %}
             </div>
-        
+            <div class="textarea">
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldsanlkdskda adls ;kjad;lkj ;dldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldjdadsdsa;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdaldafdafajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasldsk;jhdsl dajhldaskjhljdlsjda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;sadffsasdasddasasddsadsadsa;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+
+                <p style="color:white">{{webnov1}}</p>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasdssaddsljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdadcdssadsadsaddsasDl;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldjdsalkjndskajd;lkj;adskl;lddsasljda;ldfdfsadsdsDSkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kcadfadssdadsadssadasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldadasljdadsdsdsdsdsds;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkdsadsasaddsdsajdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdskljahdsljkhlksjdhlkjahdslkjhajkhladksljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljddsdsasdadsadasa;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+
         </div>
+    <script>
+        const textarea = document.querySelector('.textarea') 
+        const code = document.querySelectorAll('body')
+
+        const changeUpperFile = () => {
+            textarea.innerText = code
+
+        }
+        
+    </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushAS3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushAppleScript.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushBash.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCSharp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushColdFusion.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCpp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushDelphi.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushDiff.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushErlang.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushGroovy.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJava.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJavaFX.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPhp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPlain.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPowerShell.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushPython.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushRuby.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSass.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushScala.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushSql.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushVb.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.min.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
 
 {% endblock %}
