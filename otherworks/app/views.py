@@ -28,17 +28,15 @@ def community(request):
 def contact(request):
     return render(request, 'contact.html')
 
-def works1(request):
-    return render(request, '_works1.html')
+def premiere(request):
+    return render(request, 'premiere.html')
 
-def works2(request):
-    return render(request, '_works2.html')
+def navercalendar(request):
+    return render(request, 'navercalendar.html')
 
-def works3(request):
-    return render(request, '_works3.html')
+def naver(request):
+    return render(request, 'naver.html')
 
-def works4(request):
-    return render(request, '_works4.html')
 
 def _vscode(request):
     webnovels = webnovel.objects.all()
