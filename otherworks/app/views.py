@@ -15,3 +15,15 @@ def community(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def works1(request):
+    return render(request, '_works1.html')
+
+def works2(request):
+    return render(request, '_works2.html')
+
+def works3(request):
+    return render(request, '_works3.html')
+
+def works4(request):
+    return render(request, '_works4.html')

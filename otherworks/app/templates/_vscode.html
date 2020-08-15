@@ -165,7 +165,7 @@
         </div> -->
         <div class="hello">
             <div class="upper-file-menu">
-                <div id="upper-file"><i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></div>
+                <div id="upper-file" onclick={changeUpperFile()}><i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></div>
                 <div id="upper-file"><i class="fab fa-html5"></i> <span id="file-name">_excel.html</span></div>
                 <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">tests.py</span></div>
                 <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">views.py</span></div>
@@ -181,7 +181,41 @@
                 <div>{{ forloop.counter }}</div>
                 {% endfor %}
             </div>
+            <div class="textarea">
+                <xmp>
+                    dsafadsdszddda
+                    <div class="menu-drop">
+                    <div class="box-click">
+                        &nbsp;<i class="fa fa-chevron-down"></i> <span id="project-name">OPEN EDITORS</span>
+                        <div class="show-pre">
+                            <ul>
+                                <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">_chatbot.html</span></li>
+                                <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_chatbot.css</span></li>
+                                <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></li>
+                            </ul>
+                            <span id="project-name">&nbsp;&nbsp;&nbsp;&nbsp;GROUP 2</span>
+                            <ul>
+                                <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">_chatbot.html</span></li>
+                                <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_chatbot.css</span></li>
+                                <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                </div>
+                </xmp>
+            </div>
         
         </div>
+    <script>
+        const textarea = document.querySelector('.textarea') 
+        const code = document.querySelectorAll('body')
+
+        const changeUpperFile = () => {
+            textarea.innerText = code
+
+        }
+        
+    </script>
 
 {% endblock %}

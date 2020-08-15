@@ -305,6 +305,7 @@ ul.left li {
     width: calc(100% - 247px);
     margin-left: 247px;
     margin-right: 0;
+    display: flex;
     /* overflow: scroll; */
 }
 
@@ -339,9 +340,7 @@ div .number-area {
     overflow: hidden;
     font-size: 13px;
     margin-top: 90px;
-    z-index: -1;
     opacity: 0.4;
-    
 }
 
 .upper-file-log {
@@ -371,3 +370,17 @@ div.active {
     
 }
 
+div .textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(100%-277px);
+    margin-left: 30px;
+    height: 100%;
+    color: #ccc;
+    overflow: scroll;
+    font-size: 13px;
+    margin-top: 90px;
+    opacity: 1;
+    overflow: scroll;
+}
