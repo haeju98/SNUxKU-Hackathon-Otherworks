@@ -68,7 +68,7 @@ def signup(request):
             password = request.POST['password']
         )
         auth.login(request, new_user)
-        return redirect('index')
+        return redirect('home')
     
     return render(request, 'registration/signup.html')
 
@@ -87,12 +87,12 @@ def login(request):
             found_user,
             backend='django.contrib.auth.backends.ModelBackend'
         )
-        return redirect(request.GET.get('next', '/app/'))
+        return redirect(request.GET.get('next', '/'))
     return render(request, 'registration/login.html')
 
 def logout(request):
     auth.logout(request)
-    return redirect('index')
+    return redirect('home')
 
 @login_required(login_url='/registration/login')
 def create(request):
