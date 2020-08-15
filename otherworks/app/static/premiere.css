@@ -1,0 +1,285 @@
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#pr_body {
+    width: 100%;
+    height: 100%;
+    background-color: #252525;
+}
+
+.pr_top_nav {
+    display: flex;
+    justify-content: center;
+    height: 5%;
+    border-bottom: solid 3px black;
+}
+
+.pr_top_nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.pr_top_nav li {
+    display: flex;
+    color: #b3b0b0;
+    margin-right: 25px; 
+    margin-left: 25px; 
+    font-size: 13px;
+}
+
+#pr_top_container {
+    display: flex;
+    width: 100%;
+    height: 60%;
+    border-bottom: solid 3px black;
+    font-weight: 600;
+}
+
+/* top left */
+.pr_top_left {
+    width: 50%;
+    height: 100%;
+}
+
+.pr_source nav {
+    display: flex;
+    width: 100%;
+}
+
+.pr_source ul {
+    display: flex;
+    height: 5%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+}
+
+.pr_source li {
+    display: flex;
+    color: #b3b0b0;
+    margin-right: 35px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pr_top_left_content {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* left timeline */
+.pr_top_left_timeline {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.pr_top_left_timeline div {
+    display: flex;
+}
+
+.pr_top_left_bottom {
+    justify-content: center;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    color: gainsboro;
+}
+
+#pr_timeclock {
+    color: gray;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* top right */
+.pr_top_right{
+    width: 50%;
+    height: 100%;
+    border-left: solid 3px black;
+}
+
+#pr_bottom_container {
+    display: flex;
+    width: 100%;
+    height: 35%;
+}
+
+.pr_import {
+    width: 30%;
+}
+
+.pr_import nav {
+    display: flex;
+    height: 8%;
+}
+
+.pr_import ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.pr_import li {
+    display: flex;
+    color: #b3b0b0;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.pr_editing {
+    height: 8%;
+}
+
+.pr_search {
+    height: 8%;
+}
+
+.pr_media_outer {
+    height: 76%;
+    display: flex;
+    justify-content: center;
+}
+
+.pr_media {
+    height: 100%;
+    width: 90%;
+    border-top: 1px solid rgb(54, 54, 54);
+    border-left: 1px solid rgb(54, 54, 54);
+    border-right: 1px solid rgb(54, 54, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool_icons {
+    width: 3%;
+    border-right: solid 3px black;
+    border-left: solid 3px black;
+}
+
+.tool_icons i {
+    color: gray;
+    margin: 5px;
+}
+
+.tool_icons ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.timeline {
+    width: 65%;
+}
+
+.timeline ul {
+    height: 8%;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.timeline li {
+    display: flex;
+    color: #b3b0b0;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.timeline_num {
+    height: 5%;
+    color: gray;
+    font-size: 17px;
+}
+
+.timeline_tools {
+
+    height: 5%;
+
+}
+
+.timeline_media {
+    height: 82%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meter {
+    width: 7%;
+    border-left: solid 3px black;
+}
+
+.meter_bar {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    border: solid 2px black;
+}
+
+.meter_bar_outer {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.meter_bar_left {
+    width: 50%;
+    height: 5%;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+
+}
+
+.meter_bar_right {
+    width: 50%;
+    height: 5%;
+    border-bottom: solid 2px black;
+}
+
+
+input {
+    color: white;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+button {
+    color: rgb(87, 86, 86);
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+
+

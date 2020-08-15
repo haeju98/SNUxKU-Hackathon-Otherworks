@@ -15,3 +15,6 @@ def community(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def premiere(request):
+    return render(request, 'premiere.html')
