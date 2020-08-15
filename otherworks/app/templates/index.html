@@ -2,20 +2,37 @@
 {% block css %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'index.css' %}" type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="../package/swiper-bundle.min.css">
 {% endblock %}
 
 {% block container %}
 
-<span id="title"><h1>Post List</h1></span>
+<span id="title" style="margin: 50px 0;"><h1>Post List</h1></span>
 <!-- <div class="cardcontainer"> -->
     <!-- 진자 템플릿 사용 -->
-    {% for post in post_page %}
-    <!-- 세부 내용은 _post.html에 작성 -->
-    {% include '_post.html' %}
-    {% endfor %}
+    <div class="swiper-container">
+        <div class="swiper-wrapper" style="display: flex;">
+            {% for post in post_page %}
+            <!-- 세부 내용은 _post.html에 작성 -->
+            {% include '_post.html' %}
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+
 <!-- </div> -->
 <span id = 'btn-container'>
-    <a href="{% url 'create' %}" class="btn btn-info">New</a>
+    <a href="{% url 'create' %}" class="btn btn-info" style="color: #fff;
+    background-color: #083238;
+    border-color: #083238; width: 18rem">New</a>
     {% if post_page.has_previous %}
     <a class="btn btn-info" href="?page=1">맨앞으로</a>
     <a class="btn btn-info" href="?page={{post_page.previous_page_number}}">이전</a>
@@ -25,5 +42,21 @@
     <a class="btn btn-info" href="?page={{post_page.paginator.num_pages}}">맨뒤로</a>
     {% endif %}
 </span>
+
+<!-- Swiper JS -->
+<script src="../package/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
 
 {% endblock %}

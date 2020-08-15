@@ -8,9 +8,15 @@
         <div id="monitorOn" class="screenMonitor active">
           <div class="inScreenLogo"></div>
           <div class="inScreenTopBar"></div>
-          <div class="inScreenContent"></div>
-          <div class="inScreenContent"></div>
-          <div class="inScreenContent"></div>
+          {% if user.is_authenticated %}
+            <div class="inScreenContent">hello, {{user.username}}</div>
+            <a class="inScreenContent" href="{% url 'logout' %}">LOGOUT</a>
+            <a class="inScreenContent" href="{% url 'about' %}">ABOUT US</a>
+          {% else %}
+            <a class="inScreenContent" href="{% url 'login' %}">LOGIN</a>
+            <a class="inScreenContent" href="{% url 'signup' %}">SIGN UP</a>
+            <a class="inScreenContent" href="{% url 'about' %}">ABOUT US</a>
+          {% endif %}
           <div class="inScreenFooter"></div>
           <div class="inScreenStartBar">
             <i class="fa fa-windows" aria-hidden="true"></i>
