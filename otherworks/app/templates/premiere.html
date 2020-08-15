@@ -1,0 +1,253 @@
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'premiere.css' %}" type='text/css'>
+<title>Adobe Premiere</title>
+<script src="https://kit.fontawesome.com/60e86e9052.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block container %}
+
+
+<style>
+#column {
+    margin-left: 10px;
+}
+
+#lticon {
+    margin-left: 10px;
+    color: rgb(87, 86, 86);
+    font-size: 13px;
+}
+
+.pr_top_left_bottom i {
+    color: rgb(87, 86, 86);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+.timeline_num{
+    margin-left: 20px;
+    font-weight: 800;
+    color: rgb(87, 86, 86);
+}
+
+.timeline_tools i {
+    margin-left: 15px;
+    color: rgb(54, 54, 54);
+    font-size: 13px;
+}
+
+.pr_search ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#media_text{
+    font-size: 13px;
+    color: rgb(87, 86, 86);
+}
+
+iframe {
+    height: 90%;
+    width: 90%;
+    border: 0;
+}
+
+</style>
+
+
+<div id="pr_body">
+    <nav class="pr_top_nav">
+        <ul class="pr_nav_bar">
+            <li>Assembly</li>
+            <li>Editing</li>
+            <li>Color</li>
+            <li>Effects</li>
+            <li>Audio</li>
+            <li>Graphics</li>
+            <li>Libraries</li>
+            <li><i class="fas fa-angle-double-right"></i></li>
+        </ul>
+    </nav>  
+
+    <div id="pr_top_container">
+        <div class="pr_top_left"> 
+            <nav class="pr_source">
+                <ul>
+                    <li>Source:(no clips) <i class="fas fa-columns" id="column"></i></li>
+                    <li>Effect Controls</li>
+                    <li>Audio Clip Mixer:</li>
+                    <li>Metadata</li>
+                </ul>
+            </nav>
+            <!-- video  -->
+            <div class="pr_top_left_content">
+
+            </div> 
+            <div class="pr_top_left_timeline">
+                <div id="pr_timeclock">00;00;00</div>
+                <div id="div_column">
+                    <i class="fas fa-door-closed" id="lticon"></i><i class="fas fa-wave-square" id="lticon"></i>
+                </div>
+                <div id="pr_timeclock">00;00;00</div>
+            </div>
+
+            <div class="pr_top_left_bottom">
+                <div>
+                    <i class="fas fa-map-pin"></i>
+                    <i class="fas fa-chevron-left"></i>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="far fa-caret-square-left"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="far fa-caret-square-right"></i>
+                    <i class="fas fa-file-upload"></i>
+                    <i class="fas fa-copy"></i>
+                    <i class="fas fa-camera"></i>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+        </div>
+        <div class="pr_top_right"> 
+            <nav class="pr_source">
+                <ul id="div_column">
+                    <li>Program: (no sequences)<i class="fas fa-columns" id="column"></i></li>
+                </ul>
+            </nav>
+            <div class="pr_top_left_content">
+                <iframe id="youriframe"></iframe>
+            </div>
+
+            <div class="pr_top_left_timeline">
+                <div id="pr_timeclock">00;00;00</div>
+                <div></div>
+                <div id="pr_timeclock">00;00;00</div>
+            </div>
+
+            <div class="pr_top_left_bottom">
+                <div>
+                    <i class="fas fa-map-pin"></i>
+                    <i class="fas fa-chevron-left"></i>
+                    <i class="fas fa-chevron-right"></i>
+                    <i class="far fa-caret-square-left"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="far fa-caret-square-right"></i>
+                    <i class="fas fa-file-upload"></i>
+                    <i class="fas fa-copy"></i>
+                    <i class="fas fa-camera"></i>   
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pr_bottom_container">
+        <div class="pr_import">
+            <nav>
+                <ul>
+                    <li>Project Ending Basics<i class="fas fa-columns" id="column"></i></li>
+                    <li>Media Browser</li>
+                    <li>Libraries</li>
+                    <li>Info</li>
+                    <li>Effects</li>
+                    <li>Mar</li>
+                    <li><i class="fas fa-angle-double-right"></i></li>
+                </ul>
+            </nav>
+
+            <div class="pr_editing">
+                <ul>
+                    <li> <i class="far fa-folder"></i></li>
+                    <li>Editing Basics.prproj</li>
+                </ul>
+            </div>
+            <div class="pr_search">
+                <ul>
+                    <li>
+                        <form onsubmit="go_get(); return false;">
+                            <button type="submit"> <i class="fas fa-search"></i></button>
+                            <input type="text" id="yourtextfield" />
+                        </form>
+                    </li>
+                    <li>0 item</li>
+                </ul>
+            </div>
+
+            <div class="pr_media_outer">
+
+                <div class="pr_media">
+                    <div id="media_text">
+                        Import media to start
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tool_icons">
+            <div style="height: 5%;"></div>
+            <ul>
+                <li><i class="fas fa-location-arrow" style="color: rgb(0, 127, 212);"></i></li>
+                <li><i class="fas fa-file-import"></i></li>
+                <li><i class="fas fa-puzzle-piece"></i></li>
+                <li><i class="fas fa-hand-scissors"></i></li>
+                <li><i class="fas fa-text-width"></i></li>
+                <li><i class="fas fa-pen-nib"></i></li>
+                <li><i class="fas fa-hand-paper"></i></li>
+                <li><i class="fas fa-font"></i></li>
+            </ul>
+        </div>
+
+        <div class="timeline">
+            <nav>
+                <ul>
+                    <li><i class="fas fa-times" style="font-size: 10px; color: rgb(87, 86, 86);"></i></li>
+                    <li>Timeline: (no sequence)</i><i class="fas fa-columns" id="column"></i></li>
+                </ul>
+            </nav>
+            <div class="timeline_num">00;00;00;00</div>
+            <div class="timeline_tools">
+                <i class="far fa-window-close"></i> 
+                <i class="fas fa-magnet"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="fab fa-markdown"></i>
+                <i class="fas fa-tools"></i> 
+            </div>
+            <div class="timeline_media">
+                <div id="media_text">
+                    Drop media here to create sequence
+                </div> 
+            </div>
+        </div>
+
+        <div class="meter">
+
+            <div style="height: 10%;">
+            </div>
+            <div class="meter_bar_outer">
+                <div class="meter_bar">
+                    <div class="meter_bar_left"></div>
+                    <div class="meter_bar_right"></div>
+                </div>
+            </div>
+            
+
+
+        </div>
+
+    </div>
+
+
+
+</div>
+     <script type="text/javascript">
+         function go_get() {
+             var base_url = 'http://www.youtube.com/embed?listType=search&list=';
+             var search_field = document.getElementById('yourtextfield').value;
+             var target_url = base_url + search_field;
+             var ifr = document.getElementById('youriframe');
+             ifr.src = target_url;
+             return false;
+         }
+     </script>
+{% endblock %}

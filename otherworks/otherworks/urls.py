@@ -35,6 +35,7 @@ urlpatterns = [
     path('works/navercalendar', views.navercalendar, name="navercalendar"),
     path('community/', views.community, name="community"),
     path('contact/', views.contact, name="contact"),
+    path('premiere/', views.premiere, name="premiere"),
     path('index/', views.index, name="index"),
     path('create/', views.create, name="create"),
     path('<int:post_pk>/detail', views.detail, name="detail"),
