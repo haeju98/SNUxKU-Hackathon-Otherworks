@@ -31,6 +31,7 @@ $(document).ready(() => {
 
     $('.omok-cell').click(function (e){
         const $this = $(e.currentTarget);
+        const $inner = $this.children();
         const $board = $this.parent().parent();
         const $greyAttack = document.querySelector("#grey-attack");
         const $greenAttack = document.querySelector("#green-attack");
@@ -43,7 +44,8 @@ $(document).ready(() => {
         }
         else {
             if ($board.hasClass("green-turn")){
-                $this.css('background-color', 'green');
+                $inner.css('background-color', 'green');
+                $inner.css('border', '1px solid black');
                 $this.toggleClass("checked green");
                 $board.toggleClass("green-turn");
                 $($greyAttack).fadeToggle(
@@ -54,7 +56,8 @@ $(document).ready(() => {
                 );
             }
             else{
-                $this.css('background-color', '#adadad');
+                $inner.css('background-color', '#adadad');
+                $inner.css('border', '1px solid black');
                 $this.toggleClass("checked grey");
                 $board.toggleClass("green-turn");
                 $($greyAttack).fadeToggle(
@@ -77,6 +80,7 @@ $(document).ready(() => {
             for(var k=0 ; k < len ; k++){
                 var $block = $list[k];
                 var id = $($block).attr('id');
+                id = id.split(',');
                 var yPos = parseInt(id[0]);
                 var xPos = parseInt(id[1]); 
                 console.log('x좌표');
@@ -84,7 +88,7 @@ $(document).ready(() => {
                 console.log('y좌표');
                 console.log(yPos);
                 // 가로확인
-                if (xPos >4){
+                if (xPos >10){
                 }
                 else {
                     var counter = 0;
@@ -92,7 +96,7 @@ $(document).ready(() => {
                         var temp=xPos+j;
                         var x = temp.toString();
                         var y = yPos.toString();
-                        var newID = y+x;
+                        var newID = y+','+x;
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked grey")){
                             counter += 1;
@@ -108,7 +112,7 @@ $(document).ready(() => {
                     }
                 }
                 // 세로확인
-                if (yPos >4){
+                if (yPos > 10){
                 }
                 else {
                     var counter = 0;
@@ -116,7 +120,7 @@ $(document).ready(() => {
                         var temp=yPos+j;
                         var x = xPos.toString();
                         var y = temp.toString();
-                        var newID = y+x;
+                        var newID = y+','+x;
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked grey")){
                             counter += 1;
@@ -131,10 +135,9 @@ $(document).ready(() => {
                         break;
                     }
                 }
-
-                
+       
                 // 대각선확인 오아
-                if(xPos>4 || yPos >4 ){
+                if(xPos>10 || yPos >10 ){
                 }
                 else {
                     
@@ -144,7 +147,7 @@ $(document).ready(() => {
                         var ytemp=yPos+j;
                         var x = xtemp.toString();
                         var y = ytemp.toString();
-                        var newID = y+x;
+                        var newID = y+','+x;
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked grey")){
                             counter += 1;
@@ -160,7 +163,7 @@ $(document).ready(() => {
                     }
                 }
                 // 대각선확인 왼아
-                if(xPos<4 || yPos>4){
+                if(xPos<4 || yPos>10){
 
                 }
                 else {
@@ -171,8 +174,8 @@ $(document).ready(() => {
                         var ytemp=yPos+j;
                         var x = xtemp.toString();
                         var y = ytemp.toString();
-                        var newID = y+x;    
-                        console.log(newID);
+                        var newID = y+','+x;    
+                        
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked grey")){
                             counter += 1;
@@ -200,11 +203,15 @@ $(document).ready(() => {
             for(var k=0 ; k < len ; k++){
                 var $block = $list[k];
                 var id = $($block).attr('id');
+                id = id.split(',');
                 var yPos = parseInt(id[0]);
                 var xPos = parseInt(id[1]); 
-
+                console.log('x좌표');
+                console.log(xPos);
+                console.log('y좌표');
+                console.log(yPos);
                 // 가로확인
-                if (xPos >4){
+                if (xPos >10){
                     continue;
                 }
                 else {
@@ -213,7 +220,7 @@ $(document).ready(() => {
                         var temp=xPos+j;
                         var x = temp.toString();
                         var y = yPos.toString();
-                        var newID = y+x;
+                        var newID = y+','+x;
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked green")){
                             counter += 1;
@@ -229,7 +236,7 @@ $(document).ready(() => {
                     }
                 }
                 // 세로확인
-                if (yPos >4){
+                if (yPos >10){
                     continue;
                 }
                 else {
@@ -238,7 +245,7 @@ $(document).ready(() => {
                         var temp=yPos+j;
                         var x = xPos.toString();
                         var y = temp.toString();
-                        var newID = y+x;
+                        var newID = y+','+x;
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked green")){
                             counter += 1;
@@ -255,7 +262,7 @@ $(document).ready(() => {
                 }
 
                  // 대각선확인 오아
-                if(xPos>4 || yPos >4 ){
+                if(xPos>10 || yPos >10 ){
                 }
                 else {
                     
@@ -265,7 +272,8 @@ $(document).ready(() => {
                         var ytemp=yPos+j;
                         var x = xtemp.toString();
                         var y = ytemp.toString();
-                        var newID = y+x;
+                        var newID = y+','+x;
+                        
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked green")){
                             counter += 1;
@@ -281,7 +289,7 @@ $(document).ready(() => {
                     }
                 }
                 // 대각선확인 왼아
-                if(xPos<4 || yPos>4){
+                if(xPos<4 || yPos>10){
 
                 }
                 else {
@@ -292,8 +300,8 @@ $(document).ready(() => {
                         var ytemp=yPos+j;
                         var x = xtemp.toString();
                         var y = ytemp.toString();
-                        var newID = y+x;    
-                        console.log(newID);
+                        var newID = y+','+x;    
+                        
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked green")){
                             counter += 1;
@@ -323,6 +331,7 @@ $(document).ready(() => {
                 0
             );
         }
+        console.log(' ')
     });
 
 
@@ -338,7 +347,8 @@ $(document).ready(() => {
         const $board = document.querySelector('.omok-board');
 
         $($allBlocks).toggleClass('checked');
-        $($allBlocks).css('background-color', 'white');
+        $($allBlocks).children().css('background-color', 'white');
+        $($allBlocks).children().css('border', '0px');
         $($greyBlocks).toggleClass('grey');
         $($greenBlocks).toggleClass('green');
         if ($($board).hasClass("green-turn")){
@@ -379,8 +389,8 @@ $(document).ready(() => {
                         <div class="value">
                             ${response.title}
                         </div>
-                        <div>
-                            <a href="/excel/${response.title}/><span>보러 가기</span></a>
+                        <div style="display:flex; align-items:center;">
+                            <a href="/excel/${response.title}/" style="color:black;"><span>보러 가기</span></a>
                             <i class="material-icons">arrow_drop_down</i>
                         </div>
                     </div>
