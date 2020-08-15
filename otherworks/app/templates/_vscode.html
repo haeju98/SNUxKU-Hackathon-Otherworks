@@ -4,6 +4,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreDefault.min.css">
+<script src="https://kit.fontawesome.com/4d17cd9c8d.js" crossorigin="anonymous"></script>
 
 {% endblock %}
 {% block container %}
@@ -106,7 +107,7 @@
                     &nbsp;<i class="fa fa-chevron-down"></i> <span id="project-name">OPEN EDITORS</span>
                     <div class="show-pre">
                         <ul>
-                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name">_chatbot.html</span></li>
+                            <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-html5"></i> <span id="file-name" style="padding: 10px;">_chatbot.html</span></li>
                             <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_chatbot.css</span></li>
                             <li id="migrations">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></li>
                         </ul>
@@ -161,13 +162,15 @@
             </div>
         </div>
         </div>
+        
         <!--TEXTAREA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
         <!-- <div class="textarea">
             
         </div> -->
         <div class="hello">
             <div class="upper-file-menu">
-                <div id="upper-file" onclick={changeUpperFile()}><i class="fab fa-css3-alt"></i> <span id="file-name">_excel.css</span></div>
+
+                <div id="upper-file1"><i class="fab fa-html5"></i> <span id="file-name1">_excel.html</span></div>
                 <div id="upper-file"><i class="fab fa-html5"></i> <span id="file-name">_excel.html</span></div>
                 <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">tests.py</span></div>
                 <div id="upper-file"><i class="fab fa-python"></i> <span id="file-name">views.py</span></div>
@@ -191,12 +194,21 @@
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasldsk;jhdsl dajhldaskjhljdlsjda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;sadffsasdasddasasddsadsadsa;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
-
-                <p style="color:white">{{webnov1}}</p>
+                {% for i in title_list %}
+                <p id="title{{forloop.counter}}" onclick="showContent('{{forloop.counter}}')" style="color:#ccc; opacity: 0.8;">{{i}}</p>
+                
+                <br>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasdssaddsljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdadcdssadsadsaddsasDl;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                {% endfor %}
+
+                {% for i in content_list %}
+                <p id="vs-nov-content{{forloop.counter}}" style="display: none;">{{i}}</p>
+                {% endfor %}
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);"><span class="hljs-tag">&lt;<span class="hljs-name" style="color: rgb(221, 136, 136); font-weight: 700;">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string" style="color: rgb(221, 136, 136);">"aizzang"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name" style="color: rgb(221, 136, 136); font-weight: 700;">span</span>&gt;</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type 
+                specimen book. It has survived not only five centuries, <span class="hljs-tag">&lt;<span class="hljs-name" style="color: rgb(221, 136, 136); font-weight: 700;">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string" style="color: rgb(221, 136, 136);">"wannasleep"</span>&gt;</span> but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing passages, <span class="hljs-tag">&lt;/<span class="hljs-name" style="color: rgb(221, 136, 136); font-weight: 700;">p</span>&gt;</span>and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<span class="hljs-tag">&lt;/<span class="hljs-name" style="color: rgb(221, 136, 136); font-weight: 700;">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name" style="color: rgb(221, 136, 136); font-weight: 700;">section</span>&gt;</span></pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
@@ -210,19 +222,32 @@
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdsdjnjlfaldj;ldadasjkljhsakjhdskljahdsljkhlksjdhlkjahdslkjhajkhladksljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljddsdsasdadsadasa;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
                 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+
+
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljddsdsasdadsadasa;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+                <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(186, 186, 186);">&lt;<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span> <span class="hljs-built_in" style="color: rgb(224, 196, 108);">class</span>=<span class="hljs-string" style="color: rgb(224, 196, 108);">"vs-text"</span>&gt;asdjnjlfaldj;ldasljda;lkjdal;dajl;kdasj&lt;/<span class="hljs-keyword" style="color: rgb(203, 120, 50);">div</span>&gt;</pre>
+
 
         </div>
     <script>
         const textarea = document.querySelector('.textarea') 
-        const code = document.querySelectorAll('body')
-
-        const changeUpperFile = () => {
-            textarea.innerText = code
-
+        const upper_file = document.querySelector('#file-name1') 
+        const log = document.querySelector(".upper-file-log")
+        const upper_file_bg = document.querySelector('#upper-file1')
+        const vs_nov_title = document.getElementById('vs-nov-title')
+        const vs_nov_content = document.getElementById('vs-nov-content')
+        const showContent = (num) => {
+            content = document.getElementById('vs-nov-content'+num).innerText;
+            title = document.getElementById('title'+num).innerText;
+            textarea.innerText = content;
+            upper_file.innerText = title;
+            upper_file_bg.classList.add('hohover')
         }
-        
+
+
     </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushAS3.min.js"></script>

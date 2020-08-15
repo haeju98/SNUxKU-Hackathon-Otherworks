@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}" type='text/css'>
+{% endblock %}
+
+{% block container %}
+
+<span id="title"><h1>Post List</h1></span>
+<!-- <div class="cardcontainer"> -->
+    <!-- 진자 템플릿 사용 -->
+    {% for post in post_page %}
+    <!-- 세부 내용은 _post.html에 작성 -->
+    {% include '_post.html' %}
+    {% endfor %}
+<!-- </div> -->
+<span id = 'btn-container'>
+    <a href="{% url 'create' %}" class="btn btn-info">New</a>
+    {% if post_page.has_previous %}
+    <a class="btn btn-info" href="?page=1">맨앞으로</a>
+    <a class="btn btn-info" href="?page={{post_page.previous_page_number}}">이전</a>
+    {% endif %}
+    {% if post_page.has_next %}
+    <a class="btn btn-info" href="?page={{post_page.next_page_number}}">다음으로</a>
+    <a class="btn btn-info" href="?page={{post_page.paginator.num_pages}}">맨뒤로</a>
+    {% endif %}
+</span>
+
+{% endblock %}

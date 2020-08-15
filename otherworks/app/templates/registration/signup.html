@@ -1,0 +1,12 @@
+{% block container %}
+    <h1>회원가입</h1>
+    {% if error %}
+    <h3 style="color: red;">{{ error }}</h3>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="name">
+        <input type="password" name="password" placeholder="password">
+        <button type="submit">가입하기</button>
+    </form>
+{% endblock container %}
