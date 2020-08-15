@@ -26,23 +26,23 @@ html, body {
   
   #p2 {
     left: 0;
-    top: 680px;
+    top: 100%;
   }
 
   #p3 {
     left: 0;
-    top: 1360px;
+    top: 200%;
   }
 
   #p4 {
     left: 0;
-    top: 2040px;
+    top: 300%;
   }
   
   #p1 { background: rgb(2, 109, 11); }
   #p2 { background: rgb(55, 0, 182); }
-  #p3 { background: gold; }
-  #p4 { background: deeppink; }
+  #p3 { background: rgb(201, 176, 39); }
+  #p4 { background: rgb(221, 57, 57); }
   
   
   
