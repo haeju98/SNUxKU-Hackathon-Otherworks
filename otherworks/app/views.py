@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-
+from .models import webnovel
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -27,3 +27,11 @@ def works3(request):
 
 def works4(request):
     return render(request, '_works4.html')
+
+def _vscode(request):
+    webnovels = webnovel.objects.all()
+    title_list = []
+    for i in webnovels:
+        title_list.append(i.title)
+    webnov1 = title_list[0]
+    return render(request, '_vscode.html', {'title_list' : title_list,'webnov1':webnov1})

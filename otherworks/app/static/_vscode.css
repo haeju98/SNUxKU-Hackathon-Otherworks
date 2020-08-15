@@ -331,16 +331,19 @@ div.upper-file-menu {
 
 
 div .number-area {
+    padding-top: 8px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 30px;
+    width: 90px;
     height: 100%;
     color: #ccc;
     overflow: hidden;
     font-size: 13px;
     margin-top: 90px;
     opacity: 0.4;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .upper-file-log {
@@ -375,7 +378,6 @@ div .textarea {
     flex-direction: column;
     align-items: flex-start;
     width: calc(100%-277px);
-    margin-left: 30px;
     height: 100%;
     color: #ccc;
     overflow: scroll;
@@ -383,4 +385,24 @@ div .textarea {
     margin-top: 90px;
     opacity: 1;
     overflow: scroll;
+}
+
+pre .hljs-keyword, .hljs-string{
+    font-size: 13px;
+    padding: 0;
+}
+
+.hljs-built_in {
+    font-size: 13px;
+    padding: 0;
+}
+
+pre.hljs {
+    margin:0;
+    padding: 0 0;
+}
+
+.hljs-tag, .hljs-name, .hljs-attr, .hljs-string {
+    font-size: 13px;
+
 }
