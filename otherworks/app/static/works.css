@@ -26,7 +26,8 @@ html, body, .page {
   #p2, #p3, #p4, #p5 {
     left: 200%;
   }
-  
+
+
   #p1 { background: darkslateblue; }
   #p2 { background: tomato; }
   #p3 { background: gold; }
@@ -123,7 +124,7 @@ html, body, .page {
   }
   
   .title {
-    font-size: 38px;
+    font-size: 50px;
   }
   
   .hint {
@@ -190,5 +191,4 @@ html, body, .page {
     -o-transform: translateX(0) !important;
     transition-delay: 1s;
   }
-  
   
