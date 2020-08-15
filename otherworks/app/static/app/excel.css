@@ -252,6 +252,7 @@ i:hover {
     overflow-y:hidden;
     display:flex; 
     justify-content: center;
+    align-items:center;
 }
 
 .title-button {
@@ -263,7 +264,7 @@ i:hover {
     border-width: 0px !important;
     border-width: 0px !important;
     border-image-width: 0px !important;
-    line-height: 1.5;
+    line-height: 1.6;
     outline:0;
     
     
