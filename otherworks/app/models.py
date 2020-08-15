@@ -34,7 +34,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()   
     image = ProcessedImageField(
-               upload_to='', # 저장 위치
+               upload_to='img/', # 저장 위치
                processors=[ResizeToFill(600,600)], # 처리할 작업 목록
                format='JPEG', # 저장 포맷(확장자)
                options= {'quality': 90 }, # 저장 포맷 관련 옵션 (JPEG 압축률 설정)
@@ -45,4 +45,3 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
-    

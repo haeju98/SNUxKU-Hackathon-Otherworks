@@ -35,7 +35,7 @@ urlpatterns = [
     path('<int:post_pk>/detail', views.detail, name="detail"),
     path('<int:post_pk>/update', views.update, name='update'),
     path('<int:post_pk>/delete', views.delete, name="delete"),
-    path('vscode/', views._vscode, name="vscode")
+    path('vscode/', views._vscode, name="vscode"),
     
     path('excel/', views.excel, name="excel"),
     path('excel/omok/', views.excel_omok, name="excel_omok"),
