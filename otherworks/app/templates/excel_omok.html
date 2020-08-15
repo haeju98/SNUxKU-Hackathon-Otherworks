@@ -175,7 +175,7 @@
                             {% comment %} 제목 보여주기 {% endcomment %}
                             <div class="table">
                                 <img src = "{% static 'image/graph.jpg' %}" style="position:absolute; top:550px; left:60px; width:auto; height:500px;">
-                                <img src = "{% static 'image/graph2.png' %}" style="position:absolute; top:30px; right:23px; width:300px; height:500px;">
+                                <img src = "{% static 'image/graph2.png' %}" style="position:absolute; top:30px; right:0; width:300px; height:500px;">
                                 {% for _ in range %}
                                     {% if forloop.first	 %}
                                         <div class="cell-wrapper" id = "{{ forloop.counter }}">

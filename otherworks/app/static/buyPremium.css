@@ -26,17 +26,17 @@ html, body {
   
   #p2 {
     left: 0;
-    top: 680px;
+    top: 100%;
   }
 
   #p3 {
     left: 0;
-    top: 1360px;
+    top: 200%;
   }
 
   #p4 {
     left: 0;
-    top: 2040px;
+    top: 300%;
   }
   
   #p1 { background: rgb(2, 109, 11); }

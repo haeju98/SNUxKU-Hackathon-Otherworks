@@ -326,8 +326,8 @@ i:hover {
 
 .omok-board {
     position:absolute;
-    top:0;
-    right:23px;
+    top:28px;
+    right:1%;
     width:auto;
     height:auto;
     background-color:white;
