@@ -4,10 +4,11 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 body {
     background-color: #1E1E1E;
+    overflow: scroll;
 }
 .header {
     background: #3c3c3c;
@@ -31,9 +32,10 @@ i.fa-html5{
     color: yellow;
 }
 li#migrations {
+    padding: 3px;
     display: flex;
     align-items: center;
-    padding: 1px;
+    
 }
 .logo {
     display: inline-block;
@@ -71,7 +73,7 @@ ul.header-menu li.header-menu-link {
 
 .side-header {
     background: #333;
-    position: absolute;
+    position: fixed;
     top: 30px;
     left: 0;
     width: 47px;
@@ -79,7 +81,7 @@ ul.header-menu li.header-menu-link {
 }
 
 .bottom-header {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -135,7 +137,7 @@ ul.side-header-botton-menu {
 
 .menu-option {
     background: #252526;
-    position: absolute;
+    position: fixed;
     top: 30px;
     left: 47px;
     width: 200px;
@@ -208,6 +210,24 @@ hr {
     opacity: 1;
 }
 
+.hohover{
+    background: #37373d;
+
+}
+
+.loghover {
+    background: #37373d;
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    margin-top: 55px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    font-size:13.5px;
+    color: #ccc;
+
+}
 .menu-option li.active {
     background: #37373d;
 }
@@ -305,20 +325,21 @@ ul.left li {
     width: calc(100% - 247px);
     margin-left: 247px;
     margin-right: 0;
-    /* overflow: scroll; */
+    display: flex;
+    overflow: scroll;
 }
 
 div.upper-file-menu {
     width: 100%;
     height: 30px;
     display: flex;
-    margin-top: 30px;
+    margin-top: 29px;
     position: fixed;
     z-index: 100;
     background-color: #1E1E1E;
 }
 
-#upper-file {
+#upper-file, #upper-file1 {
     width: 120px;
     display: flex;
     align-items: center;
@@ -330,25 +351,25 @@ div.upper-file-menu {
 
 
 div .number-area {
+    padding-top: 8px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 30px;
+    width: 40px;
     height: 100%;
     color: #ccc;
-    overflow: hidden;
+    overflow: scroll;
     font-size: 13px;
     margin-top: 90px;
-    z-index: -1;
     opacity: 0.4;
-    
+    margin-right: 20px;
 }
 
 .upper-file-log {
     display: flex;
     flex-direction: row;
     height: 20px;
-    margin-top: 60px;
+    margin-top: 55px;
     position: fixed;
     z-index: 100;
     background-color: #1E1E1E;
@@ -371,3 +392,48 @@ div.active {
     
 }
 
+div .textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    color: #ccc;
+    overflow: scroll;
+    font-size: 13px;
+    margin-top: 90px;
+    opacity: 1;
+}
+
+pre .hljs-keyword, .hljs-string{
+    font-size: 13px;
+    padding: 0;
+}
+
+.hljs-built_in {
+    font-size: 13px;
+    padding: 0;
+}
+
+pre.hljs {
+    margin:0;
+    padding: 0 0;
+}
+
+.hljs-tag, .hljs-name, .hljs-attr, .hljs-string  {
+    font-size: 13px;
+
+}
+
+.aft-textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    color: #ccc;
+    overflow: scroll;
+    font-size: 13px;
+    margin-top: 90px;
+    opacity: 0.8;
+}

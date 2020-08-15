@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block container %}
+<h1>Update</h1>
+
+<form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form postform %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+</form>
+{% endblock %}

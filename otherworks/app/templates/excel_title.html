@@ -1,0 +1,218 @@
+{% load  static %}
+{% load index %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|">
+        <link  rel="stylesheet"  href="{% static 'app/excel.css' %}" />  
+        <script src="https://kit.fontawesome.com/b023c32a66.js" crossorigin="anonymous"></script>  
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>  
+    </head>
+    <body>
+        <div class="layout">
+            
+            <header class = "header-wrapper">
+                <div class = "header upper">
+                    <div class = "icon left">
+                        <i class="fas fa-save"></i>
+                        <a href = "{% url 'excel' %}"><i class="fas fa-reply"></i></a>
+                        <i class="fas fa-share"></i>
+                        <i class="material-icons">arrow_drop_down</i>
+                    </div>
+                    <div class = "title">
+                        <span>
+                            통합 문서1 - excel
+                        </span>
+                    </div>
+                    <div class = "icon right">
+                        <i class="fab fa-elementor"></i>
+                        <i class="fas fa-minus"></i>
+                        <i class="fas fa-window-restore"></i>
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <div class= "header lower">
+                    <div class = "tabs">
+                        <span>파일</span>
+                        <span>홈</span>
+                        <span>삽입</span>
+                        <span>페이지 레이아웃</span>
+                        <span>수식</span>
+                        <span>데이터</span>
+                        <span>검토</span>
+                        <a href = "{% url 'excel_omok' %}"><span>오목</span></a>
+                        <i class="fas fa-lightbulb"></i>
+                        <span style="margin-left:-7px;">수행할 작업을 알려주세요.</span>
+                    </div>
+                    <div class = "user-info">
+                        <span>사용자</span>
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <main class = "content">
+                <div class = "search">
+                    <div class="cell-number">
+                        <span>A1</span>
+                        <i class="material-icons">arrow_drop_down</i>
+                    </div>
+
+                    <span style="padding-bottom:5px;">:</span>
+
+                    <div class = "function-box">
+                        <i class="fas fa-times"></i>
+                        <i class="fas fa-check"></i>
+                        <img src = "{% static 'image/function.png' %}">
+                    </div>
+                    <div class = "input">
+                        <div class="value">
+                            {{title}}
+                        </div>
+                        <i class="material-icons">arrow_drop_down</i>
+                        
+                    </div>
+                </div>
+
+                <div class = "table-wrapper">
+                    {% comment %} <img src = "{% static 'image/graph.jpg' %}" class="graph" > {% endcomment %}
+                    <div class="column">
+                        <div class="image-wrapper">
+                            <img src = "{% static 'image/triangle-right-bottom.png' %}" style="width:auto; height:20px;" >
+                        </div>
+                        {% for i in 'ABCDEFGHIJKLM'%}
+                            <div class="column-header">
+                                {{i}}
+                            </div>
+                        {% endfor%}
+                    </div>
+                    <div class="cells">
+                        <div class="row">
+                            
+                            {% for _ in range1 %}
+                                <div class="row-header" id = "{{forloop.counter}}">
+                                    {{ forloop.counter }}
+                                </div>
+                            {% endfor %}
+                        
+                        </div>
+
+                        {% comment %} 제목 보여주기 {% endcomment %}
+                        <div class="table">
+                            
+                            {% with ''|center:12 as range2 %}
+                                {% for _ in range1 %}
+                                    {% if forloop.last %}
+                                         <div class="cell-wrapper" id = "{{ forloop.counter }}">
+                                            {% for _ in range2 %}
+                                                {% if forloop.counter <= rest %}
+                                                    <div class="cell content">
+                                                        {% with index=forloop.parentloop.counter0|multiply:12|add:forloop.counter0 %}        
+                                                            {{ content_list|index:index }}
+                                                        {% endwith %}
+                                                    </div>
+                                                {% else %}
+                                                    <div class="cell content"></div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        <div class="cell-wrapper" id = "{{ forloop.counter }}">
+                                            {% for _ in range2 %}
+                                                <div class="cell content">
+                                                    {% with index=forloop.parentloop.counter0|multiply:12|add:forloop.counter0 %}        
+                                                        {{ content_list|index:index }}
+                                                    {% endwith %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endwith %}
+                            
+                        </div>
+                        {% comment %} 제목 보여주기 {% endcomment %}
+                        {% comment %} 내용 보여주기 {% endcomment %}
+
+                    </div>
+
+                    <div class="cells fake" style="display:none; position:relaive;">
+                        {% with ''|center:50 as range %}
+                            <div class="row">
+                                
+                                {% for _ in range %}
+                                    <div class="row-header" id = "{{forloop.counter}}">
+                                        {{ forloop.counter }}
+                                    </div>
+                                {% endfor %}
+                            
+                            </div>
+
+                            {% comment %} 제목 보여주기 {% endcomment %}
+                            <div class="table">
+                                <img src = "{% static 'image/graph.jpg' %}" style="position:absolute; top:550px; left:60px; width:auto; height:500px;">
+                                <img src = "{% static 'image/graph2.png' %}" style="position:absolute; top:30px; right:23px; width:300px; height:500px;">
+                                {% for _ in range %}
+                                    {% if forloop.first	 %}
+                                        <div class="cell-wrapper" id = "{{ forloop.counter }}">
+                                            {% for i in header %}
+                                                <div class = "cell content" style="font-weight:bold;">
+                                                    {{ header|index:forloop.counter0 }}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        <div class="cell-wrapper" id = "{{ forloop.counter }}">
+                                            {% if forloop.counter0 < length %}
+                                                {% for i in contentFake|index:forloop.counter0%}
+                                                    <div class = "cell content">
+                                                        {{i}}
+                                                    </div>
+                                                {% endfor %}
+                                            {% else %}
+                                                {% with ''|center:12 as range %}
+                                                    {% for i in range %}
+                                                        <div class = "cell content">
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endwith %}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                
+                            </div>
+                        {% comment %} 제목 보여주기 {% endcomment %}
+                        {% comment %} 내용 보여주기 {% endcomment %}
+                        {% endwith %}
+                    </div>
+
+                </div>
+
+                <div class = "footer">
+                    <div class="sheet-scroll">
+                        <div class="left-wrapper">
+                            <i class="fas fa-angle-left"></i>
+                            <i class="fas fa-angle-right"></i>
+                            <div class="sheet1">
+                                Sheet1
+                                
+                            </div>
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="right-wrapper">
+
+                        </div>
+                    </div>
+                    <div class="sheet-layout">
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="{% static 'app/excel.js' %}"></script>
+    </body>
+</html>

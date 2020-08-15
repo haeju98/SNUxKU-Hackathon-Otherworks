@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block container %}
+    {% if post.image %}
+    <img src="./media/{{ post.image }}" alt="{{ image.file.image }}">
+    {% endif %}
+    <div>{{ post.title }}<br></div>
+    <div>{{ post.content }}</div>
+
+
+    {% buttons %}
+        <a href="{% url 'index' %}" class="btn btn-info" id="Back">Back</a>
+    {% endbuttons %}
+
+{% endblock %}
+
