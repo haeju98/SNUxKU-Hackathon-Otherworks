@@ -300,7 +300,7 @@ $(document).ready(() => {
                         var ytemp=yPos+j;
                         var x = xtemp.toString();
                         var y = ytemp.toString();
-                        var newID = y+','+x;    
+                        var newID = y+x;    
                         
                         $anchor =  document.getElementById(newID);
                         if ($($anchor).hasClass("checked green")){

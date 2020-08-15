@@ -28,7 +28,7 @@ urlpatterns = [
     path('about/', views.about, name="about"),
     path('works/', views.works, name="works"),
     path('works/vscode/', views._vscode, name="_vscode"),
-    path('works/excel/', views.excel, name="excel"),
+    path('excel/', views.excel, name="excel"),
     path('works/naver/', views.naver, name="naver"),
 
     path('works/premiere/', views.premiere, name="premiere"),
