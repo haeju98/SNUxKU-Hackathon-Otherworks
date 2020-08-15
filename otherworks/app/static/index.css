@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+}
+/* div .cardcontainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+} */
+
+.card {
+    display: flex;
+    justify-content: center;
+
+}
+
+#title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a#Back {
+    display: flex;
+    width: 100px;
+    
+}
+
+span#btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

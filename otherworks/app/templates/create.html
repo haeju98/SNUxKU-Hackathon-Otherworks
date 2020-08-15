@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'contact.css' %}" type='text/css'>
+{% load bootstrap4 %}
+{% endblock %}
+{% block container %}
+<h1>New Post</h1>
+
+<form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form post_form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+</form>
+<a href="{% url 'index' %}" class="btn btn-info">Cancel</a>
+{% endblock %}
+
