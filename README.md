@@ -54,7 +54,7 @@ Use the package manager [pipenv shell](https://pipenv-fork.readthedocs.io/en/lat
 
 ```bash
 git clone https://github.com/haeju98/SNUxKU-Hackathon-Otherworks
-cd team2_miniton
+cd otherworks
 pipenv shell
 pipenv install
 python manage.py runserver
